@@ -23,12 +23,12 @@ def query():
 			  resp = client_wit.speech(f, None, {'Content-Type': 'audio/wav'})
 			inputWords = str(resp['_text'])
 			print inputWords
-			if "five" in inputWords:
+			if "95" in inputWords:
 				subprocess.call(['qemu-system-i386 -full-screen -localtime -cpu 486 -m 32 -boot d -hda win95.qcow'], shell=True)
-			if "eight" in inputWords:
+			if "98" in inputWords:
 				subprocess.call(['qemu-system-i386 -full-screen -localtime -cpu 486 -m 128 -boot d -hda win98.img'], shell=True)
-			if "x" in inputWords:
-				subprocess.call(['qemu-system-x68_64 -full-screen -m 256 -hda winXP.img'], shell=True)
+			if "xp" in inputWords:
+				subprocess.call(['qemu-system-x86_64 -full-screen -m 256 -hda winXP.img'], shell=True)
 			if inputWords == "reboot":
 				subprocess.call(['sudo reboot'], shell=True)
 			if inputWords == "shut down":
